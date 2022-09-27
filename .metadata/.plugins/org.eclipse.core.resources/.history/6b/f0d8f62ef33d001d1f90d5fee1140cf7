@@ -1,0 +1,96 @@
+package holerite;
+
+public class Holerite {
+	
+	//descontos
+	private Double parcinss;
+	private Double parcfgts;
+	private Double parcir;
+	private Double deducaopadraoir;
+	private Double valetransporte;
+	
+	//acrescimos
+	private Double valorhoraextra;
+	private Funcionario funcionario =  new Funcionario();
+	
+	
+	public Double getParcinss() {
+		if(funcionario.getValorsalario() <= 1045) {
+			parcinss = 7.5;
+		} else if(funcionario.getValorsalario() <= 2089.60) {
+			parcinss = 9d;
+		} else if(funcionario.getValorsalario() <= 3134.41) {
+			parcinss = 12d;
+		} else {
+			parcinss = 14d;
+		}
+		return parcinss;
+	}
+
+	public void setParcinss(Double parcinss) {
+		this.parcinss = parcinss;
+	}
+
+	public Double getParcfgts() {
+		if(funcionario.getValorsalario() >= 1903.99 
+			&& funcionario.getValorsalario() <= 2826.65) {
+			parcfgts = 7.5;
+		} else if(funcionario.getValorsalario() > 2862.65  
+				&& funcionario.getValorsalario() <= 3751.05) {
+			parcfgts = 15d;
+		} else if(funcionario.getValorsalario() > 3751.05 
+				&& funcionario.getValorsalario() <= 4664.68) {
+			parcfgts = 22.5;
+		} else if(funcionario.getValorsalario() > 4664.68){
+			parcfgts = 27.5;
+		}
+		return parcfgts;
+	}
+
+	public void setParcfgts(Double parcfgts) {
+		this.parcfgts = parcfgts;
+	}
+
+	public Double getParcir() {
+		return parcir;
+	}
+
+	public void setParcir(Double parcir) {
+		this.parcir = parcir;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Double getValorhoraextra() {
+		return valorhoraextra;
+	}
+
+	public void setValorhoraextra(Double valorhoraextra) {
+		this.valorhoraextra = valorhoraextra;
+	}
+
+	public Double getValetransporte() {
+		return valetransporte;
+	}
+
+	public void setValetransporte(Double valetransporte) {
+		this.valetransporte = valetransporte;
+	}
+
+	public Double getDeducaopadraoir() {
+		return deducaopadraoir;
+	}
+
+	public void setDeducaopadraoir(Double deducaopadraoir) {
+		this.deducaopadraoir = deducaopadraoir;
+	}
+	
+	
+
+}

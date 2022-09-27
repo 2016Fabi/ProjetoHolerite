@@ -1,0 +1,38 @@
+package holerite;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//pegando os dados do funcionario
+		Funcionario funcionario = new Funcionario();
+		System.out.println("Informe o nome do(a) funcionario(a): ");
+        funcionario.setNome(sc.nextLine());
+        System.out.println("Informe o endereco do(a) funcionario(a): ");
+        funcionario.setEndereco(sc.nextLine());
+        System.out.println("Informe o numero da CTPS do(a) funcionario(a): ");
+        funcionario.setNumero(sc.nextLine());
+        System.out.println("Informe a serie da CTPS do(a) funcionario(a): ");
+        funcionario.setSerie(sc.nextLine());
+        System.out.println("Informe o cargo do(a) funcionario(a): ");
+        funcionario.setCargo(sc.nextLine());
+        System.out.println("Informe o valor salario base do(a) funcionario(a): ");
+        funcionario.setValorsalario(sc.nextDouble());
+        
+        Holerite holerite = new Holerite();
+        holerite.setFuncionario(funcionario);
+        
+        //pegando o VT do holerite 
+        System.out.println("Informe o valor transporte utilizado pelo(a) funcionario(a): ");
+        holerite.setValetransporte(sc.nextDouble());
+        System.out.println("Informe a quantodade de horas extras pelo(a) funcionario(a): ");
+        holerite.setValorhoraextra(sc.nextDouble());
+        
+        
+        //impressâo 
+        Impressora.imprimir(holerite);
+	}
+
+}

@@ -1,0 +1,41 @@
+package holerite;
+
+public class Impressora {
+    public static void imprimir(Holerite holerite) {
+    	String saida = "";
+    	//impressão do funcionario
+    	saida += "*********************";
+    	saida += "\nFuncionario: " + holerite.getFuncionario().getNome();
+    	saida += "\nEndereco: " + holerite.getFuncionario().getEndereco();
+    	saida += "\nNumero da CTPS: " + holerite.getFuncionario().getNumero();
+    	saida += "\nSerie da CTPS: " + holerite.getFuncionario().getSerie();
+    	saida += "\nCargo: " + holerite.getFuncionario().getCargo();
+    	saida += "\nSalario Base: R$ " + holerite.getFuncionario().getValorsalario();
+    	
+    	//impressão dos creditos
+    	saida += "\n*********************";
+    	saida += "\nSalario: " + holerite.getFuncionario().getValorsalario();
+    	saida += "\nHoras Extras: " + holerite.getValorhoraextra() 
+    			  + " -> Ref a " + holerite.getQtddhorasextra() + "hora(s)";
+    	
+    	//impressão dos descontos
+    	saida += "\n*********************";
+    	double inss = holerite.getParcinss() * holerite.getFuncionario().getValorsalario() / 100;
+    	double fgts = holerite.getParcfgts() * holerite.getFuncionario().getValorsalario() / 100; 
+    	double ir = holerite.getDeducaopadraoir() + (holerite.getParcir() *  
+    			holerite.getFuncionario().getValorsalario() / 100);
+    	double valeTransporte = holerite.getValetransporte();
+    	saida += "\nDescontos";
+    	saida += "\nINSS: " + inss;
+    	saida += "\nFGTS: " + fgts;
+    	saida += "\nI.R.: " +ir;
+    	saida += "\nVale Transporte" + valeTransporte;
+    	
+    	//Total 
+    	saida += "\n*********************";
+    	saida += "" ;
+    	
+    	
+    	System.out.println(saida);
+    }
+}

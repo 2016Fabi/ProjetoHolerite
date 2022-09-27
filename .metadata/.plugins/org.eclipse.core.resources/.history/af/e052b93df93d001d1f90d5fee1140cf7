@@ -1,0 +1,14 @@
+package holerite;
+
+public class Impressora {
+    public static void imprimir(Holerite holerite) {
+    	String saida = "";
+    	
+    	
+    	
+    	
+    	
+    	
+    	System.out.println(saida);
+    }
+}

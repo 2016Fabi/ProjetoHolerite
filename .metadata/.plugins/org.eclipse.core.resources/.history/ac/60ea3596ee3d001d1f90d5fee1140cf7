@@ -1,0 +1,65 @@
+package holerite;
+
+public class Holerite {
+	
+	//descontos
+	private Double parcinss;
+	private Double parcfgts;
+	private Double parcir;
+	private Double valetransporte;
+	//acrescimos
+	private Double valorhoraextra;
+	private Funcionario funcionario =  new Funcionario();
+	
+	
+	public Double getParcinss() {
+		return parcinss;
+	}
+
+	public void setParcinss(Double parcinss) {
+		this.parcinss = parcinss;
+	}
+
+	public Double getParcfgts() {
+		return parcfgts;
+	}
+
+	public void setParcfgts(Double parcfgts) {
+		this.parcfgts = parcfgts;
+	}
+
+	public Double getParcir() {
+		return parcir;
+	}
+
+	public void setParcir(Double parcir) {
+		this.parcir = parcir;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Double getValorhoraextra() {
+		return valorhoraextra;
+	}
+
+	public void setValorhoraextra(Double valorhoraextra) {
+		this.valorhoraextra = valorhoraextra;
+	}
+
+	public Double getValetransporte() {
+		return valetransporte;
+	}
+
+	public void setValetransporte(Double valetransporte) {
+		this.valetransporte = valetransporte;
+	}
+	
+	
+
+}

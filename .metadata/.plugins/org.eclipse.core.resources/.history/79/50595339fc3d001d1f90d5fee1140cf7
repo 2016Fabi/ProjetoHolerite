@@ -1,0 +1,120 @@
+package holerite;
+
+public class Holerite {
+
+	// descontos
+	private Double parcinss;
+	private Double parcfgts;
+	private Double parcir = 0.0;
+	private Double deducaopadraoir = 0.0;
+	private Double valetransporte = 0.0;
+
+	// acrescimos
+	private Double valorhoraextra = 0.0;
+	private Double qtddhorasextra = 0.0;
+	private Funcionario funcionario = new Funcionario();
+
+	public Double getParcinss() {
+		if (funcionario.getValorsalario() <= 1045) {
+			parcinss = 7.5;
+		} else if (funcionario.getValorsalario() <= 2089.60) {
+			parcinss = 9d;
+		} else if (funcionario.getValorsalario() <= 3134.41) {
+			parcinss = 12d;
+		} else {
+			parcinss = 14d;
+		}
+		return parcinss;
+	}
+
+	public void setParcinss(Double parcinss) {
+		this.parcinss = parcinss;
+	}
+
+	public Double getParcfgts() {
+		if (funcionario.getValorsalario() <= 1045) {
+			parcfgts = 7.5;
+		} else if (funcionario.getValorsalario() <= 2089.60) {
+			parcfgts = 9d;
+		} else if (funcionario.getValorsalario() <= 3134.41) {
+			parcfgts = 12d;
+		} else {
+			parcfgts = 14d;
+		}
+		return parcfgts;
+	}
+
+	public void setParcfgts(Double parcfgts) {
+		this.parcfgts = parcfgts;
+	}
+
+	public Double getParcir() {
+		if (funcionario.getValorsalario() >= 1903.99 && funcionario.getValorsalario() <= 2826.65) {
+			parcir = 7.5;
+		} else if (funcionario.getValorsalario() > 2862.65 && funcionario.getValorsalario() <= 3751.05) {
+			parcir = 15d;
+		} else if (funcionario.getValorsalario() > 3751.05 && funcionario.getValorsalario() <= 4664.68) {
+			parcir = 22.5;
+		} else if (funcionario.getValorsalario() > 4664.68) {
+			parcir = 27.5;
+		}
+		return parcir;
+	}
+
+	public void setParcir(Double parcir) {
+		this.parcir = parcir;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Double getValorhoraextra() {
+		valorhoraextra = ((funcionario.getValorsalario() / 30) / 8) * 1.5 * qtddhorasextra;
+		return valorhoraextra;
+	}
+
+	public void setValorhoraextra(Double valorhoraextra) {
+		this.valorhoraextra = valorhoraextra;
+	}
+
+	public Double getValetransporte() {
+		return valetransporte * (6/100);
+	}
+
+	public void setValetransporte(Double valetransporte) {
+		this.valetransporte = valetransporte;
+	}
+
+	public Double getDeducaopadraoir() {
+		if (funcionario.getValorsalario() >= 1903.99 && funcionario.getValorsalario() <= 2826.65) {
+			deducaopadraoir = 142.80;
+		} else if (funcionario.getValorsalario() > 2862.65 && funcionario.getValorsalario() <= 3751.05) {
+			deducaopadraoir = 354.80;
+		} else if (funcionario.getValorsalario() > 3751.05 && funcionario.getValorsalario() <= 4664.68) {
+			deducaopadraoir = 636.13;
+		} else if (funcionario.getValorsalario() > 4664.68) {
+			deducaopadraoir = 869.36;
+		}
+		return deducaopadraoir;
+	}
+
+	public void setDeducaopadraoir(Double deducaopadraoir) {
+		this.deducaopadraoir = deducaopadraoir;
+	}
+
+	public Double getQtddhorasextra() {
+		return qtddhorasextra;
+	}
+
+	public void setQtddhorasextra(Double qtddhorasextra) {
+		this.qtddhorasextra = qtddhorasextra;
+	}
+	
+	
+
+}
